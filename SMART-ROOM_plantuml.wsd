@@ -1,0 +1,39 @@
+@startuml SMART-ROOM_Temperature
+!theme bluegray
+hide empty description
+state Temperature {
+    [*] --> Idle
+    Idle --> HalfCold : T>26°
+    HalfCold --> Cold : T>32°
+    Cold --> HalfCold : T<29°
+    HalfCold --> Idle : T<=26°
+    Idle --> HalfHot : T<=20°
+    HalfHot --> Hot : T<15
+    Hot --> HalfHot : T>18°
+    HalfHot --> Idle : T>20
+}
+state Iluminzione {
+    state Automatic{
+        [*] --> giorno: >500lux
+        [*] -up-> notte: <100lux
+        giorno: light OFF
+        notte: light ON
+    }
+    state Manuale {
+        [*] --> Bottone: ON || OFF
+        Bottone --> ON : Light OFF
+        Bottone -> OFF : Light ON
+    }
+    Input --> Manuale : ("M")
+    Input --> Automatic : ("A")
+
+}
+State Door {
+    [*] --> close
+    close --> open: <50cm
+    open -right-> opened: 3sec in Opened
+    opened -up-> close
+}
+
+
+@enduml

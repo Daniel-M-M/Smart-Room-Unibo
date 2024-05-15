@@ -1,0 +1,6 @@
+#line 1 "C:\\Users\\ace_m\\OneDrive\\Documenti\\quarto_semestre_TSI\\Embedded_IoT\\Lab_parte1\\SMART-ROOM\\.vscode\\arduino.json"
+{
+    "board": "arduino:avr:uno",
+    "sketch": "SMART-ROOM.ino",
+    "output": "build"
+}

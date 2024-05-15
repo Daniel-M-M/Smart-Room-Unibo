@@ -1,0 +1,5 @@
+{
+    "board": "arduino:avr:uno",
+    "sketch": "SMART-ROOM.ino",
+    "output": "build"
+}
